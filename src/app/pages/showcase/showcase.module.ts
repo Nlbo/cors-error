@@ -5,7 +5,6 @@ import { ShowcaseRoutingModule } from './showcase-routing.module';
 import { ShowcaseComponent } from './showcase.component';
 import { SliderComponent } from './slider/slider.component';
 import { DetailsComponent } from './details/details.component';
-import {CarouselModule} from "ngx-owl-carousel-o";
 import {SharedModule} from "../../shared/shared.module";
 
 
@@ -13,7 +12,6 @@ import {SharedModule} from "../../shared/shared.module";
   declarations: [ShowcaseComponent, SliderComponent, DetailsComponent],
   imports: [
     CommonModule,
-    CarouselModule,
     SharedModule,
     ShowcaseRoutingModule
   ]
