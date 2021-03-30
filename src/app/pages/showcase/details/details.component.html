@@ -1,0 +1,17 @@
+<nz-modal nzVisible="true"  (nzOnCancel)="handleCancel()" >
+  <ng-container *nzModalContent>
+  <div class="container">
+    <div class="imgSection" style="background-image: url('https://zapomni.lastick.ru/{{details.poster.path}}');">
+    </div>
+    <div class="infoSection">
+      <div class="imgInfo">
+        <p class="shortInfo"><b>Address</b>: {{details.NearestSchedule.Hall.address.ru}}</p>
+        <p class="shortInfo bold"><b>Name</b>: {{details.name.ru}}</p>
+        <p class="shortInfo"><b>Date</b>: {{details.date | date: 'MMM d, y'}}</p>
+        <button nz-button nzType="primary" >Buy</button>
+      </div>
+    </div>
+  </div>
+  </ng-container>
+  <ng-container *nzModalFooter></ng-container>
+</nz-modal>

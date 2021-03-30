@@ -1,0 +1,33 @@
+.slider {
+  width: 100%;
+  position: relative;
+}
+.img {
+  width: 100%;
+  height: 100%;
+}
+.imgInfo {
+  position: absolute;
+  /* width: 388px; */
+  left: 5%;
+  bottom: 15%;
+  background-color: rgba(0, 0, 0, .2);
+  border-radius: 10px;
+  padding: 5px;
+}
+.shortInfo {
+  color: #fff;
+  font-size: 16px;
+}
+.fs50 {
+  font-size: 50px;
+}
+.btn {
+  background: #6201c4;
+  color: #fff;
+  border-radius: 10px;
+}
+.details {
+  position: absolute;
+  top: 25%;
+}

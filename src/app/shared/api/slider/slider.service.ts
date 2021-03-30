@@ -10,6 +10,6 @@ export class SliderService {
   }
 
   getAll() {
-    return this.http.get('https://zapomni.lastick.ru/api/widget/v1/nearest_events_by_date?date=2020-08-01&date_interval=90');
+    return this.http.get('/api/widget/v1/nearest_events_by_date?date=2020-08-01&date_interval=500');
   }
 }

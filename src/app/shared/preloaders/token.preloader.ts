@@ -1,11 +1,12 @@
 import {Injectable} from '@angular/core';
-import {AuthService} from '../api/auth/auth.service';
+import {AuthService} from "../api/auth/auth.service";
+import {tap} from "rxjs/operators";
 
 
 @Injectable({
   providedIn: 'root'
 })
-export class TokenPreloader {
+export class  TokenPreloader {
 
   constructor(
     private authService: AuthService) {
@@ -15,8 +16,7 @@ export class TokenPreloader {
     return new Promise(async (resolve, reject) => {
       this.authService.getToken()
         .subscribe((response) => {
-          let token = response.headers.get('x-auth-token');
-          console.log("token = ", token);
+          localStorage.setItem('token', response.headers.get('x-auth-token'))
         });
       resolve(true);
     });

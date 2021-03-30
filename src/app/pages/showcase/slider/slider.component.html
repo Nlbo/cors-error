@@ -1,1 +1,17 @@
-<p>slider works!</p>
+<nz-carousel >
+  <div class="slider" nz-carousel-content *ngFor="let slide of slidesStore">
+    <img
+      class="img"
+      [src]="'https://zapomni.lastick.ru' + slide.poster.path"
+      [alt]="slide.poster.name"
+      [title]="slide.poster.name"
+    >
+    <div class="imgInfo">
+      <p class="shortInfo">{{slide.NearestSchedule.Hall.address.ru}}</p>
+      <p class="shortInfo fs5">{{slide.name.ru}}</p>
+      <p class="shortInfo">{{slide.date | date: 'MMM d, y'}}</p>
+      <button nz-button nzType="primary" (click)="more(slide)">More</button>
+    </div>
+    <app-details (closeMore)="closeMore()" class="details" *ngIf="showMore" [details]="details"></app-details>
+  </div>
+</nz-carousel>
