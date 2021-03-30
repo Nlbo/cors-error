@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {SliderService} from "../../../shared/api/slider/slider.service";
-import {IEventModel, IEventsModel} from "../../../shared/interfaces/events.interface";
+import {SliderService} from '../../../shared/api/slider/slider.service';
+import {IEventModel} from '../../../shared/interfaces/events.interface';
 
 @Component({
   selector: 'app-slider',
@@ -14,14 +14,12 @@ export class SliderComponent implements OnInit {
   constructor(private sliderService: SliderService) { }
 
   ngOnInit(): void {
-    this.sliderService.getAll().subscribe( (data: IEventsModel[]) => {
-      data.forEach(events => {
-        events.events.forEach((event: IEventModel) => {
+    this.sliderService.getAll().subscribe(({events}) => {
+        events.forEach((event: IEventModel) => {
           this.slidesStore.push({
             ...event,
-          });
-        })
-      })
+        });
+      });
     });
   }
 
